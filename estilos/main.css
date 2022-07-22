@@ -1,0 +1,28 @@
+main
+{
+    position: relative;
+}
+main section
+{
+    font-size: 2vw;
+    text-align: center;
+    margin: 25px;
+}
+main > form
+{
+    position: relative;
+    width: 80%;
+    height: 600px;
+    left: 50%;
+    transform: translate(-50%);
+}
+.linha1
+{
+    width: 100%;
+    height: 30px;
+}
+.linha1 > label
+{
+    display: block;
+    margin-right: 50px;
+}
