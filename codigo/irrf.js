@@ -1,4 +1,4 @@
-function irrf (baseCalculo, qtdDepentes)
+export function irrf (baseCalculo, qtdDepentes)
 {
     //Tabela de IRRF.
     const irrf =
@@ -39,4 +39,3 @@ function irrf (baseCalculo, qtdDepentes)
 
     return irrfDescontado
 }
-console.log(irrf(2731, 2))

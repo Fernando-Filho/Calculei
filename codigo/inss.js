@@ -1,4 +1,4 @@
-function inss (baseCalculo)
+export function inss (baseCalculo)
 {
     //Tabela de INSS.
     const inss =
@@ -37,5 +37,3 @@ function inss (baseCalculo)
     }
     return innsDescontado
 }
-let teste = inss(3500)
-console.log(teste)
