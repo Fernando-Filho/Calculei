@@ -31,10 +31,10 @@ function inss (baseCalculo)
     {
         innsDescontado =  ((((baseCalculo - inss.faixa3[valorFinal]) * inss.faixa4[alíquota]) / 100) + inss.faixa3[descontoMáximoAtéFaixa])
     }
-    // else if(baseCalculo >= inss.faixa4[valorFinal])
-    // {
-    //     innsDescontado = inns.faixa4[descontoMáximoAtéFaixa]
-    // }
+    else if(baseCalculo >= inss.faixa4[valorFinal])
+    {
+        innsDescontado = inns.faixa4[descontoMáximoAtéFaixa]
+    }
     return innsDescontado
 }
 let teste = inss(3500)
