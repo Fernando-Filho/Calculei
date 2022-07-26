@@ -1,4 +1,4 @@
-export function irrf (baseCalculo, qtdDepentes)
+export function irrf (baseCalculo, qtdDependentes)
 {
     //Tabela de IRRF.
     const irrf =
@@ -7,12 +7,12 @@ export function irrf (baseCalculo, qtdDepentes)
         faixa2: [2826.65, 15, 354.80],
         faixa3: [3751.05, 22.5, 636.13],
         faixa4: [4664.68, 27.5, 869.36],
-        qtdDepentes: 189.59
+        qtdDependentes: 189.59
     }
     
     // Constantes que serão necessárias para o calculo do IRRF.
     let irrfDescontado
-    let deduçãoDosDependentes = qtdDepentes * qtdDepentes
+    let deduçãoDosDependentes = qtdDependentes * qtdDependentes
     const teto = 0
     const alíquota = 1
     const parcelaDedutível = 2

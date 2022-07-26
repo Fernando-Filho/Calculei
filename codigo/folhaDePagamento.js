@@ -1,6 +1,6 @@
-import { inss } from "./inss.js";
-import { irrf } from "./irrf.js";
-import { fgts } from "./fgts.js";
+import { fgts } from "./fgts"
+import { inss } from "./inss"
+import { irrf } from "./irrf"
 
 // // variáveis que serão pegas do cliente.
 // const salárioContratual = document.getElementById('salárioContratual').value
@@ -10,21 +10,41 @@ import { fgts } from "./fgts.js";
 //teste
 const salárioContratual = 2500
 const númeroDependentes = 2
+const outrosProventos = 0
+const outrosDescontos = 0
+let baseCalculo
 
+// if ( checkbox(ID...Provento == true ) && checkbox(ID...Desconto == true) )
+// {
+//     baseCalculo = salárioContratual + outrosProventos - outrosDescontos
+// }
+// else if ( checkbox(ID...Provento == true ) && checkbox(ID...Desconto == false) )
+// {
+//     baseCalculo = salárioContratual + outrosProventos
+// }
+// else if ( checkbox(ID...Provento == false ) && checkbox(ID...Desconto == true) )
+// {
+//     baseCalculo = salárioContratual + outrosDescontos
+// }
+// else()
+// {
+//     baseCalculo = salárioContratual
+// }
 
 // Constantes que serão necessárias para o calculo da folha de pagamento.
 let salárioLíquido
-let innsDescontado = inss(salárioContratual)
-let irrfDescontado = irrf(salárioContratual, númeroDependentes)
-let fgtsValor = fgts(salárioContratual)
-
+let fgtsValor = fgts(baseCalculo)
+let inssValor = inss(baseCalculo)
+let irrfValor = irrf(baseCalculo, númeroDependentes)
 
 //Valores finais que serão apresentados.
-salárioLíquido = salárioContratual - (innsDescontado + irrfDescontado)
+salárioLíquido = salárioContratual - (inssValor + irrfValor)
 salárioLíquido = salárioLíquido.toFixed(2)
 fgtsValor = fgtsValor.toFixed(2)
+inssValor = inssValor.toFixed(2)
+irrfValor = irrfValor.toFixed(2)
 
 // //Escrevendo no HTML.
 // resposta.innerHTML = ""
 // resposta.innerHTML = (`O empregado terá um salário contratual de R$${salárioContratual}, tendo o salário líquido de R$${salárioLíquido}, por fim tendo direito a um FGTS recolhido no valor de R$${fgtsValor}`)
-console.log(`salárioLíquido é R$${salárioLíquido} - o Valor do FGTS é R$${fgtsValor} - o Valor do INSS é R$${innsDescontado} - o Valor do IRRF é R$${irrfDescontado}` )
+console.log(`salárioLíquido é R$${salárioLíquido} - o Valor do FGTS é R$${fgtsValor} - o Valor do INSS é R$${inssValor} - o Valor do IRRF é R$${irrfValor}` )
