@@ -1,6 +1,6 @@
-import { fgts } from "./fgts"
-import { inss } from "./inss"
-import { irrf } from "./irrf"
+import { fgts } from "./fgts.js"
+import { inss } from "./inss.js"
+import { irrf } from "./irrf.js"
 
 // // variáveis que serão pegas do cliente.
 // const salárioContratual = document.getElementById('salárioContratual').value
@@ -12,7 +12,7 @@ const salárioContratual = 2500
 const númeroDependentes = 2
 const outrosProventos = 0
 const outrosDescontos = 0
-let baseCalculo
+let baseCalculo = salárioContratual
 
 // if ( checkbox(ID...Provento == true ) && checkbox(ID...Desconto == true) )
 // {

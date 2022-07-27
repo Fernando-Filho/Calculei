@@ -39,3 +39,4 @@ export function irrf (baseCalculo, qtdDependentes)
 
     return irrfDescontado
 }
+
