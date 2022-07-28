@@ -19,14 +19,14 @@
   </nav>
 
   <main>
-    <form action="informações">
+
       <label for="salárioContratual">Salário Contratual:</label>
       <input type="number" id="salárioContratual">
 
       <label for="númeroDependentes">Quantidade de Dependentes:</label>
       <input type="number" id="númeroDependentes">
-      <input type="button" value="Calcular" onclick="Calcular()">
-    </form>
+      <input type="submit" onclick="calcular(salárioContratual , númeroDependentes)" value="Calcular">
+
     
     <div id="resposta"></div>
   </main>
@@ -34,6 +34,6 @@
   <footer>
     
   </footer>
-  <script src="../codigo/folhaDePagamento.js" type="module"></script>
+  <script src="codigo/folhaDePagamento.js" type="module"></script>
 </body>
 </html>

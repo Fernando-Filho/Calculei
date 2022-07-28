@@ -5,11 +5,11 @@ import { irrf } from "./irrf.js"
     function calcular()
     {
         // variáveis que serão pegas do cliente.
-        const salárioContratual = document.getElementById('salárioContratual').value
-        const númeroDependentes = document.getElementById('númeroDependentes').value
+        // const salárioContratual = document.getElementById('salárioContratual').value
+        // const númeroDependentes = document.getElementById('númeroDependentes').value
         const outrosProventos = 0
         const outrosDescontos = 0
-        let baseCalculo = salárioContratual
+        let baseCalculo = salárioContratual.value
         let salárioLíquido
         let resposta = document.getElementById('resposta')
 
@@ -33,7 +33,7 @@ import { irrf } from "./irrf.js"
         // Constantes que serão necessárias para o calculo da folha de pagamento.
         let fgtsValor = fgts(baseCalculo)
         let inssValor = inss(baseCalculo)
-        let irrfValor = irrf(baseCalculo, númeroDependentes)
+        let irrfValor = irrf(baseCalculo, númeroDependentes.value)
 
         //Valores finais que serão apresentados.
         salárioLíquido = salárioContratual - (inssValor + irrfValor)
@@ -44,8 +44,8 @@ import { irrf } from "./irrf.js"
 
         //Escrevendo no HTML.
         resposta.innerHTML = ""
-        resposta.innerHTML = (`O empregado terá um salário contratual de R$${salárioContratual}, tendo o salário líquido de R$${salárioLíquido}, por fim tendo um FGTS/INSS/IRRF recolhido respectivamente no valor de R$${fgtsValor} R$${inssValor} R$${irrfValor}`)
+        return resposta.innerHTML = (`O empregado terá um salário contratual de R$${salárioContratual}, tendo o salário líquido de R$${salárioLíquido}, por fim tendo um FGTS/INSS/IRRF recolhido respectivamente no valor de R$${fgtsValor} R$${inssValor} R$${irrfValor}`)
 
-        return console.log('deu certo')
+ 
 
     }
