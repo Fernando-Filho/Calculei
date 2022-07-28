@@ -20,11 +20,32 @@
 
   <main>
 
+    <div> 
+
       <label for="salárioContratual">Salário Contratual:</label>
       <input type="number" id="salárioContratual">
 
       <label for="númeroDependentes">Quantidade de Dependentes:</label>
       <input type="number" id="númeroDependentes">
+
+    </div>
+
+    <div id="proventos">
+
+      <label for="outrosProventos">Base de Calculo?</label>
+      <input type="number" id="outrosProventos">
+      <input type="checkbox">
+
+    </div>
+
+    <div id="descontos">
+      
+      <label for="outrosDescontos">Base de Calculo?</label>
+      <input type="number" id="outrosDescontos">
+      <input type="checkbox">
+
+    </div>  
+
       <input type="submit" onclick="calcular()" value="Calcular">
 
     
@@ -34,6 +55,9 @@
   <footer>
     
   </footer>
-  <script src="codigo/folhaDePagamento.js" type="module"></script>
+  <script src="codigo/folhaDePagamento.js"></script>
+  <script src="codigo/fgts.js"></script>
+  <script src="codigo/inss.js"></script>
+  <script src="codigo/irrf.js"></script>
 </body>
 </html>
