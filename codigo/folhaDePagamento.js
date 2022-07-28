@@ -1,15 +1,11 @@
-import { fgts } from "./fgts.js"
-import { inss } from "./inss.js"
-import { irrf } from "./irrf.js"
-
     function calcular()
     {
         // variáveis que serão pegas do cliente.
         const salárioContratual = document.getElementById('salárioContratual').value
-        const númeroDependentes = document.getElementById('númeroDependentes').value
-        const outrosProventos = 0
-        const outrosDescontos = 0
-        let baseCalculo = salárioContratual.value
+        const númeroDependentes = Number(document.getElementById('númeroDependentes').value)
+        const outrosProventos = document.getElementById('outrosProventos').value
+        const outrosDescontos = document.getElementById('outrosDescontos').value
+        let baseCalculo = salárioContratual
         let salárioLíquido
         let resposta = document.getElementById('resposta')
 
@@ -33,7 +29,8 @@ import { irrf } from "./irrf.js"
         // Constantes que serão necessárias para o calculo da folha de pagamento.
         let fgtsValor = fgts(baseCalculo)
         let inssValor = inss(baseCalculo)
-        let irrfValor = irrf(baseCalculo, númeroDependentes.value)
+        let irrfValor = irrf((baseCalculo - inssValor), númeroDependentes)
+        console.log(irrfValor)
 
         //Valores finais que serão apresentados.
         salárioLíquido = salárioContratual - (inssValor + irrfValor)
@@ -44,8 +41,8 @@ import { irrf } from "./irrf.js"
 
         //Escrevendo no HTML.
         resposta.innerHTML = ""
-        return resposta.innerHTML = (`O empregado terá um salário contratual de R$${salárioContratual}, tendo o salário líquido de R$${salárioLíquido}, por fim tendo um FGTS/INSS/IRRF recolhido respectivamente no valor de R$${fgtsValor} R$${inssValor} R$${irrfValor}`)
-
- 
+        resposta.innerHTML = (`O empregado terá um salário contratual de R$${salárioContratual},<br> tendo o salário líquido de R$${salárioLíquido}, por fim tendo.<br><br><br>
+        FGTS.............INSS.............IRRF<br><br> 
+        R$${fgtsValor}.....R$${inssValor}.....R$${irrfValor}`)
 
     }

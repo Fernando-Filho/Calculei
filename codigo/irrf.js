@@ -1,4 +1,4 @@
-export function irrf (baseCalculo, qtdDependentes)
+function irrf (baseCalculo, qtdDependentes)
 {
     //Tabela de IRRF.
     const irrf =

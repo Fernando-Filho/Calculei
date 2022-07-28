@@ -1,4 +1,4 @@
-export function fgts( baseCalculo )
+function fgts( baseCalculo )
 {
     const aliquotaFGTS = 8
     let valorFGTS = ((baseCalculo * aliquotaFGTS) / 100)
