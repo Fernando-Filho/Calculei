@@ -5,8 +5,8 @@ import { irrf } from "./irrf.js"
     function calcular()
     {
         // variáveis que serão pegas do cliente.
-        // const salárioContratual = document.getElementById('salárioContratual').value
-        // const númeroDependentes = document.getElementById('númeroDependentes').value
+        const salárioContratual = document.getElementById('salárioContratual').value
+        const númeroDependentes = document.getElementById('númeroDependentes').value
         const outrosProventos = 0
         const outrosDescontos = 0
         let baseCalculo = salárioContratual.value
