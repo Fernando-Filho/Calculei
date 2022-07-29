@@ -36,6 +36,7 @@ function irrf (baseCalculo, qtdDependentes)
         irrfDescontado = ((baseCalculo * irrf.faixa1[alíquota]) / 100) - irrf.faixa1[parcelaDedutível]
     }
     else { irrfDescontado = 0 }
+    
     return irrfDescontado
 }
 

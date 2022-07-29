@@ -1,39 +1,34 @@
     function calcular()
     {
         // variáveis que serão pegas do cliente.
-        const salárioContratual = document.getElementById('salárioContratual').value
+        const salárioContratual = Number(document.getElementById('salárioContratual').value)
         const númeroDependentes = Number(document.getElementById('númeroDependentes').value)
-        const outrosProventos = document.getElementById('outrosProventos').value
-        const outrosDescontos = document.getElementById('outrosDescontos').value
+
+        const outrosProventos = Number(document.getElementById('outrosProventos').value)
+        const proventoBaseCalculo = document.getElementById('proventoBaseCalculo').checked
+        console.log(4 + outrosProventos)
+
+        const outrosDescontos = Number(document.getElementById('outrosDescontos').value)
+        const descontosBaseCalculo = document.getElementById('descontosBaseCalculo').checked
+
         let baseCalculo = salárioContratual
-        let salárioLíquido
         let resposta = document.getElementById('resposta')
 
-        // if ( checkbox(ID...Provento == true ) && checkbox(ID...Desconto == true) )
-        // {
-        //     baseCalculo = salárioContratual + outrosProventos - outrosDescontos
-        // }
-        // else if ( checkbox(ID...Provento == true ) && checkbox(ID...Desconto == false) )
-        // {
-        //     baseCalculo = salárioContratual + outrosProventos
-        // }
-        // else if ( checkbox(ID...Provento == false ) && checkbox(ID...Desconto == true) )
-        // {
-        //     baseCalculo = salárioContratual + outrosDescontos
-        // }
-        // else()
-        // {
-        //     baseCalculo = salárioContratual
-        // }
+        if(proventoBaseCalculo == true && descontosBaseCalculo == true) { baseCalculo = baseCalculo + (outrosProventos - outrosDescontos) }
 
+        else if(proventoBaseCalculo == true && descontosBaseCalculo == false) { baseCalculo = baseCalculo + outrosProventos }
+
+        else if(proventoBaseCalculo == false && descontosBaseCalculo == true) { baseCalculo = baseCalculo - outrosDescontos }
+
+        else{}
+        
         // Constantes que serão necessárias para o calculo da folha de pagamento.
         let fgtsValor = fgts(baseCalculo)
         let inssValor = inss(baseCalculo)
         let irrfValor = irrf((baseCalculo - inssValor), númeroDependentes)
-        console.log(irrfValor)
 
         //Valores finais que serão apresentados.
-        salárioLíquido = salárioContratual - (inssValor + irrfValor)
+        let salárioLíquido = salárioContratual - (inssValor + irrfValor)
         salárioLíquido = salárioLíquido.toFixed(2)
         fgtsValor = fgtsValor.toFixed(2)
         inssValor = inssValor.toFixed(2)
