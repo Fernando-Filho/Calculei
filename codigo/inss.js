@@ -1,4 +1,4 @@
-export function inss( baseCalculo )
+function inss( baseCalculo )
 {
     //Tabela de INSS.
     const inss =
@@ -6,7 +6,7 @@ export function inss( baseCalculo )
         faixa1: [0, 1212, 7.5, 90.90],
         faixa2: [1212.01, 2427.35, 9, 200.28],
         faixa3: [2427.36, 3641.03, 12, 345.92],
-        faixa4: [3641.04, 7.087, 14, 828.39]
+        faixa4: [3641.04, 7087, 14, 828.39]
     }
     // Constantes que serão necessárias para o calculo do INSS.
     let inssDescontado
@@ -30,9 +30,7 @@ export function inss( baseCalculo )
     {
         inssDescontado =  ((((baseCalculo - inss.faixa3[valorFinal]) * inss.faixa4[alíquota]) / 100) + inss.faixa3[descontoMáximoAtéFaixa])
     }
-    else(baseCalculo >= inss.faixa4[valorFinal])
-    {
-        inssDescontado = inss.faixa4[descontoMáximoAtéFaixa]
-    }
+    else{ inssDescontado = inss.faixa4[descontoMáximoAtéFaixa] }
+
     return inssDescontado
 }
