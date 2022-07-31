@@ -4,7 +4,7 @@ function irrf (baseCalculo, qtdDependentes)
     const irrf =
     {
         faixa1: [1903.98, 7.5, 142.8],
-        faixa2: [2826.65, 15, 354.80],
+        faixa2: [2826.66, 15, 354.80],
         faixa3: [3751.05, 22.5, 636.13],
         faixa4: [4664.68, 27.5, 869.36],
         deduçãoporDependentes: 189.59
@@ -35,8 +35,8 @@ function irrf (baseCalculo, qtdDependentes)
     {
         irrfDescontado = ((baseCalculo * irrf.faixa1[alíquota]) / 100) - irrf.faixa1[parcelaDedutível]
     }
-    else { irrfDescontado = 0 }
-    
+    else { irrfDescontado = 0 }    
+
     return irrfDescontado
 }
 

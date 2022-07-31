@@ -1,4 +1,4 @@
-    function calcular()
+    function calcularFolhaPagamento()
     {
         // variáveis que serão pegas do cliente.
         const salárioContratual = Number(document.getElementById('salárioContratual').value)
@@ -6,7 +6,6 @@
 
         const outrosProventos = Number(document.getElementById('outrosProventos').value)
         const proventoBaseCalculo = document.getElementById('proventoBaseCalculo').checked
-        console.log(4 + outrosProventos)
 
         const outrosDescontos = Number(document.getElementById('outrosDescontos').value)
         const descontosBaseCalculo = document.getElementById('descontosBaseCalculo').checked
