@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Férias</title>
+</head>
+
+<body>
+  <header>
+  </header>
+
+  <nav>
+    <p><a href="../index.html">Folha de Pagamento</a></p>
+    <p><a href="ferias.html">Férias</a></p>
+    <p><a href="#">13º Salário</a></p>
+    <p><a href="#">Patronal</a></p>
+  </nav>
+
+  <main>
+
+    <div> 
+
+      <label for="composicaoFerias">Composição das Férias:</label><br>
+      <input type="number" id="composicaoFerias"><br>
+
+      <label for="númeroDependentes">Quantidade de Dependentes:</label><br>
+      <input type="number" id="númeroDependentes"><br>  
+
+      <input type="submit" onclick="calcularFerias()" value="Calcular">
+
+    
+    <div id="resposta"></div>
+  </main>
+  
+  <footer>
+    
+  </footer>
+  <script src="../codigo/calculoFerias.js"></script>
+  <script src="../codigo/fgts.js"></script>
+  <script src="../codigo/inss.js"></script>
+  <script src="../codigo/irrf.js"></script>
+</body>
+</html>
