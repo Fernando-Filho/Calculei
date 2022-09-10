@@ -38,5 +38,4 @@
         resposta.innerHTML = (`O empregado terá um salário contratual de R$${salárioContratual},<br> tendo o salário líquido de R$${salárioLíquido}, por fim tendo.<br><br><br>
         FGTS.............INSS.............IRRF<br><br> 
         R$${fgtsValor}.....R$${inssValor}.....R$${irrfValor}`)
-
     }
