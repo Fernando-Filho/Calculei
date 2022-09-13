@@ -1,26 +1,5 @@
-function calcularDecimoTerceiro()
-{
-    // variaveis que serão pegas do cliente.
-    const salarioContratual = Number(document.getElementById('salarioContratual').value)
-    const numeroDependentes = Number(document.getElementById('numeroDependentes').value)
-
-    const outrosProventos = Number(document.getElementById('outrosProventos').value)
-    const proventoBaseCalculo = document.getElementById('proventoBaseCalculo').checked
-
-    const outrosDescontos = Number(document.getElementById('outrosDescontos').value)
-    const descontosBaseCalculo = document.getElementById('descontosBaseCalculo').checked
-
-    let baseCalculo = salarioContratual
-    let resposta = document.getElementById('resposta')
-
-    if(proventoBaseCalculo == true && descontosBaseCalculo == true) { baseCalculo = baseCalculo + (outrosProventos - outrosDescontos) }
-
-    else if(proventoBaseCalculo == true && descontosBaseCalculo == false) { baseCalculo = baseCalculo + outrosProventos }
-
-    else if(proventoBaseCalculo == false && descontosBaseCalculo == true) { baseCalculo = baseCalculo - outrosDescontos }
-
-    else{}
-    
+function calcularDecimoTerceiro(baseCalculo, numeroDependentes)
+{    
     // Constantes que serão necessarias para o calculo da folha de pagamento.
     let fgtsValor = fgts(baseCalculo)
     let inssValor = inss(baseCalculo)
@@ -35,6 +14,7 @@ function calcularDecimoTerceiro()
     irrfValor = irrfValor.toFixed(2)
 
     //Escrevendo no HTML.
+    let resposta = document.getElementById('resposta')
     resposta.innerHTML = ""
     resposta.innerHTML = (`De acordo com a base de calculo fornecida, o empregado tera um valor bruto de R$${baseCalculo}<br>
                         Seu FGTS seria de R$${fgtsValor}<br>
