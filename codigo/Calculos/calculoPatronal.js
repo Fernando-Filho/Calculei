@@ -1,8 +1,8 @@
-    function calcularFolhaPagamento()
+    function calcularpatronal()
     {
-        // variáveis que serão pegas do cliente.
-        const salárioContratual = Number(document.getElementById('salárioContratual').value)
-        const númeroDependentes = Number(document.getElementById('númeroDependentes').value)
+        // variaveis que serão pegas do cliente.
+        const salarioContratual = Number(document.getElementById('salarioContratual').value)
+        const numeroDependentes = Number(document.getElementById('numeroDependentes').value)
 
         const outrosProventos = Number(document.getElementById('outrosProventos').value)
         const proventoBaseCalculo = document.getElementById('proventoBaseCalculo').checked
@@ -15,7 +15,7 @@
         const aliquotaFap = Number(document.getElementById('fap').value)
         const aliquoptaOutrasEntidades = Number(document.getElementById('outrasEntidades').value)
 
-        let baseCalculo = salárioContratual
+        let baseCalculo = salarioContratual
         let resposta = document.getElementById('resposta')
 
         if(proventoBaseCalculo == true && descontosBaseCalculo == true) { baseCalculo = baseCalculo + (outrosProventos - outrosDescontos) }
@@ -26,10 +26,10 @@
 
         else{}
         
-        // Constantes que serão necessárias para o calculo da folha de pagamento.
+        // Constantes que serão necessarias para o calculo da folha de pagamento.
         let fgtsValor = fgts(baseCalculo)
         let inssValor = inss(baseCalculo)
-        let irrfValor = irrf((baseCalculo - inssValor), númeroDependentes)
+        let irrfValor = irrf((baseCalculo - inssValor), numeroDependentes)
         let patronalValor = patronal(baseCalculo, aliquotaPatronal)
         let gilRatValor = ratfap(baseCalculo, aliquotaRat, aliquotaFap)
         let outrasEntidadesValor = outrasEntidades(baseCalculo, aliquoptaOutrasEntidades)
@@ -38,8 +38,8 @@
         let patronalFinal = patronalValor + gilRatValor
         outrasEntidadesValor = outrasEntidadesValor.toFixed(2)
         // //Escrevendo no HTML.
-        // resposta.innerHTML = ""
-        // resposta.innerHTML = (`O empregado terá um salário contratual de R$${salárioContratual},<br> tendo o salário líquido de R$${salárioLíquido}, por fim tendo.<br><br><br>
-        // FGTS.............INSS.............IRRF<br><br> 
-        // R$${fgtsValor}.....R$${inssValor}.....R$${irrfValor}`)
+        resposta.innerHTML = (`De acordo com a base de calculo fornecida, o empregado tera um valor bruto de R$${aliquotaPatronal}<br>
+                                Seu FGTS seria de R$${patronalValor}<br>
+                                Seu INSS seria de R$${gilRatValor}<br>
+                                Seu IRRF seria de R$${outrasEntidadesValor}<br>`)
     }
