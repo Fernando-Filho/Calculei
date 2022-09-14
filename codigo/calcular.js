@@ -22,11 +22,10 @@ function calcular() {
 
     else if(proventoBaseCalculo == false && descontosBaseCalculo == true) { baseCalculo = baseCalculo - outrosDescontos }
 
-
-    var x = document.getElementById('calculoFolhaDePagamento').addEventListener("click", calcularFolhaPagamento(baseCalculo, numeroDependentes))
-    var y = document.getElementById('calculoFerias').addEventListener("click", calcularFerias(baseCalculo, numeroDependentes))
+    document.getElementById('calculoFolhaDePagamento').addEventListener("click", calcularFolhaPagamento(baseCalculo, numeroDependentes))
+    document.getElementById('calculoFerias').addEventListener("click", calcularFerias(baseCalculo, numeroDependentes))
     document.getElementById('calculoDecimoTerceiro').addEventListener("click", calcularDecimoTerceiro(baseCalculo, numeroDependentes))
     document.getElementById('calculoPatronal').addEventListener("click", calcularpatronal(baseCalculo, aliquotaPatronal, aliquotaRat, aliquotaFap, aliquotaOutrasEntidades))
 }
 
-document.getElementsByClassName('calcular').addEventListener("click", calcular)
+// document.getElementsByClassName('calcular').addEventListener("click", calcular)
