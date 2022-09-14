@@ -9,10 +9,10 @@ function calcular() {
     const outrosDescontos = Number(document.getElementById('outrosDescontos').value)
     const descontosBaseCalculo = document.getElementById('descontosBaseCalculo').checked
 
-    const aliquotaPatronal = Number(document.getElementById('patronal').value)
-    const aliquotaRat = Number(document.getElementById('rat').value)
-    const aliquotaFap = Number(document.getElementById('fap').value)
-    const aliquoptaOutrasEntidades = Number(document.getElementById('outrasEntidades').value)
+    const aliquotaPatronal = Number(document.getElementById('aliquotaPatronal').value)
+    const aliquotaRat = Number(document.getElementById('aliquotaRat').value)
+    const aliquotaFap = Number(document.getElementById('aliquotaFap').value)
+    const aliquotaOutrasEntidades = Number(document.getElementById('aliquotaOutrasEntidades').value)
 
     let baseCalculo = salarioContratual
 
@@ -22,9 +22,8 @@ function calcular() {
 
     else if(proventoBaseCalculo == false && descontosBaseCalculo == true) { baseCalculo = baseCalculo - outrosDescontos }
 
-    calcularFolhaPagamento (baseCalculo, numeroDependentes)
-    calcularFerias (baseCalculo, numeroDependentes)
-    calcularDecimoTerceiro (baseCalculo, numeroDependentes)
-    calcularpatronal (baseCalculo, aliquotaPatronal, aliquotaRat, aliquotaFap, aliquoptaOutrasEntidades)
-    
+
+    document.getElementById('calcular').addEventListener("click", calcular)
 }
+
+document.getElementsByClassName('calcular').addEventListener("click", calcular)

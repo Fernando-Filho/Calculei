@@ -11,7 +11,7 @@ function irrf (baseCalculo, qtdDependentes)
     }
     
     // Constantes que serão necessárias para o calculo do IRRF.
-    let irrfDescontado
+    let valorIRRF
     let deduçãoDependentes = irrf.deduçãoporDependentes * qtdDependentes
     const teto = 0
     const alíquota = 1
@@ -21,23 +21,23 @@ function irrf (baseCalculo, qtdDependentes)
 
     if (baseCalculo >= irrf.faixa4[teto])
     {
-        irrfDescontado = ((baseCalculo * irrf.faixa4[alíquota]) / 100) - irrf.faixa4[parcelaDedutível]
+        valorIRRF = ((baseCalculo * irrf.faixa4[alíquota]) / 100) - irrf.faixa4[parcelaDedutível]
     }
     else if( baseCalculo >= irrf.faixa3[teto])
     {
-        irrfDescontado = ((baseCalculo * irrf.faixa3[alíquota]) / 100) - irrf.faixa3[parcelaDedutível]
+        valorIRRF = ((baseCalculo * irrf.faixa3[alíquota]) / 100) - irrf.faixa3[parcelaDedutível]
     }
     else if( baseCalculo >= irrf.faixa2[teto])
     {
-        irrfDescontado = ((baseCalculo * irrf.faixa2[alíquota]) / 100) - irrf.faixa2[parcelaDedutível]
+        valorIRRF = ((baseCalculo * irrf.faixa2[alíquota]) / 100) - irrf.faixa2[parcelaDedutível]
     }
     else if( baseCalculo >= irrf.faixa1[teto])
     {
-        irrfDescontado = ((baseCalculo * irrf.faixa1[alíquota]) / 100) - irrf.faixa1[parcelaDedutível]
+        valorIRRF = ((baseCalculo * irrf.faixa1[alíquota]) / 100) - irrf.faixa1[parcelaDedutível]
     }
-    else { irrfDescontado = 0 }    
+    else { valorIRRF = 0 }    
 
-    return irrfDescontado
+    return valorIRRF
 }
 
 

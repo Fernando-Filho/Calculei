@@ -41,25 +41,25 @@
     </div>  
     <div id="Empresa">
       
-      <label for="patronal">Patronal (%)</label><br>
-      <input type="number" id="patronal"><br>
+      <label for="aliquotaPatronal">Patronal (%)</label><br>
+      <input type="number" id="aliquotaPatronal"><br>
 
-      <label for="rat">Rat (%)</label><br>
-      <input type="number" id="rat"><br>
+      <label for="aliquotaRat">Rat (%)</label><br>
+      <input type="number" id="aliquotaRat"><br>
 
-      <label for="fap">Fap (%)</label><br>
-      <input type="number" id="fap"><br>
+      <label for="aliquotaFap">Fap (%)</label><br>
+      <input type="number" id="aliquotaFap"><br>
 
-      <label for="outrasEntidades">Outras Entidades (%)</label><br>
-      <input type="number" id="outrasEntidades"><br>
+      <label for="aliquotaOutrasEntidades">Outras Entidades (%)</label><br>
+      <input type="number" id="aliquotaOutrasEntidades"><br>
       
 
     </div>  
 
-      <input type="submit" onclick="calcular()" onclick="calcularFolhaPagamento()" value="Folha de Pagamento">
-      <input type="submit" onclick="calcular()" onclick="calcularFerias()" value="Férias">
-      <input type="submit" onclick="calcular()" onclick="calcularDecimoTerceiro()" value="13 Salário">
-      <input type="submit" onclick="calcular()" onclick="calcularpatronal()" value="Patronal">
+      <input type="submit" class="calcular" id="calculoFolhaDePagamento" value="Folha de Pagamento">
+      <input type="submit" class="calcular" id="calculoFerias" value="Férias">
+      <input type="submit" class="calcular" id="calculoDecimoTerceiro" value="13 Salário">
+      <input type="submit" class="calcular" id="calculoPatronal" value="Patronal">
 
     
     <div id="resposta"></div>
