@@ -1,6 +1,20 @@
 function calcularpatronal(baseCalculo, aliquotaPatronal, aliquotaRat, aliquotaFap, aliquotaOutrasEntidades)
 {
+    // Verificando está tudo certo com os dados.
+    const verificarSalario = verificadorDeSalario( baseCalculo )
+    if (!verificarSalario) { return }
 
+    const verificarAliquotaPatronal = verificadorAliquotaPatronal( aliquotaPatronal )
+    if (!verificarAliquotaPatronal) { return }
+
+    const verificarAliquotaRat = verificadorAliquotaRat( aliquotaRat )
+    if (!verificarAliquotaRat) { return }
+
+    const verificarAliquotaFap = verificadorAliquotaFap( aliquotaFap )
+    if (!verificarAliquotaFap) { return }
+
+    const verificarAliquotaOutrasEntidades = verificadorAliquotaOutrasEntidades( aliquotaOutrasEntidades )
+    if (!verificarAliquotaOutrasEntidades) { return }
     
     // Constantes que serão necessarias para o calculo da folha de pagamento.
     let valorINSS = inss(baseCalculo)

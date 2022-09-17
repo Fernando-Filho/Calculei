@@ -2,11 +2,10 @@ function calcularFerias(baseCalculo, numeroDependentes)
 {   
     // Verificando está tudo certo com os dados.
     const verificarSalario = verificadorDeSalario( baseCalculo )
+    if (!verificarSalario) { return }
+
     const verificarDependentes = verificadorDeDependentes( numeroDependentes )
-
-    if ( !verificarSalario ){ return }
-
-    else if ( !verificarDependentes ) { return }
+    if (!verificarDependentes) { return }
     
     // Constantes que serão necessarias para o calculo da folha de pagamento.
     baseCalculo = ( baseCalculo / 3 ) + baseCalculo

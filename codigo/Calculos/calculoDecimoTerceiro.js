@@ -2,13 +2,12 @@ function calcularDecimoTerceiro(baseCalculo, numeroDependentes, dataAdmissao)
 { 
     // Verificando está tudo certo com os dados.
     const verificarSalario = verificadorDeSalario( baseCalculo )
-    const verificarDependentes = verificadorDeDependentes( numeroDependentes )
-    const verificarAdmissao = verificadorAdmissao( dataAdmissao )
-
     if (!verificarSalario) { return }
 
+    const verificarDependentes = verificadorDeDependentes( numeroDependentes )
     if (!verificarDependentes) { return }
 
+    const verificarAdmissao = verificadorAdmissao( dataAdmissao )
     if (!verificarAdmissao) { return }
 
     // Constantes que serão necessarias para o calculo da folha de pagamento.
