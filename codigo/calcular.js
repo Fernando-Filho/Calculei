@@ -1,7 +1,9 @@
-function calcular() {
+function calcular(event)
+{   
     // variaveis que serão pegas do cliente.
     const salarioContratual = Number(document.getElementById('salarioContratual').value)
     const numeroDependentes = Number(document.getElementById('numeroDependentes').value)
+    const dataAdmissao = document.getElementById('dataAdmissao')
 
     const outrosProventos = Number(document.getElementById('outrosProventos').value)
     const proventoBaseCalculo = document.getElementById('proventoBaseCalculo').checked
@@ -16,16 +18,27 @@ function calcular() {
 
     let baseCalculo = salarioContratual
 
-    if(proventoBaseCalculo == true && descontosBaseCalculo == true) { baseCalculo = baseCalculo + (outrosProventos - outrosDescontos) }
+    if (proventoBaseCalculo == true && descontosBaseCalculo == true) { baseCalculo = baseCalculo + (outrosProventos - outrosDescontos) }
 
-    else if(proventoBaseCalculo == true && descontosBaseCalculo == false) { baseCalculo = baseCalculo + outrosProventos }
+    else if (proventoBaseCalculo == true && descontosBaseCalculo == false) { baseCalculo = baseCalculo + outrosProventos }
 
-    else if(proventoBaseCalculo == false && descontosBaseCalculo == true) { baseCalculo = baseCalculo - outrosDescontos }
+    else if (proventoBaseCalculo == false && descontosBaseCalculo == true) { baseCalculo = baseCalculo - outrosDescontos }
 
-    document.getElementById('calculoFolhaDePagamento').addEventListener("click", calcularFolhaPagamento(baseCalculo, numeroDependentes))
-    document.getElementById('calculoFerias').addEventListener("click", calcularFerias(baseCalculo, numeroDependentes))
-    document.getElementById('calculoDecimoTerceiro').addEventListener("click", calcularDecimoTerceiro(baseCalculo, numeroDependentes))
-    document.getElementById('calculoPatronal').addEventListener("click", calcularpatronal(baseCalculo, aliquotaPatronal, aliquotaRat, aliquotaFap, aliquotaOutrasEntidades))
+
+    switch (event) {
+        case 'pagamento':
+            document.getElementById('calculoFolhaDePagamento').addEventListener("click", calcularFolhaPagamento(baseCalculo, numeroDependentes))
+            break;
+        case 'ferias':
+            document.getElementById('calculoFerias').addEventListener("click", calcularFerias(baseCalculo, numeroDependentes))
+            break;
+        case '13':
+            document.getElementById('calculoDecimoTerceiro').addEventListener("click", calcularDecimoTerceiro(baseCalculo, numeroDependentes, dataAdmissao))
+            break;
+        case 'patronal':
+            document.getElementById('calculoPatronal').addEventListener("click", calcularpatronal(baseCalculo, aliquotaPatronal, aliquotaRat, aliquotaFap, aliquotaOutrasEntidades))
+
+            break;
+    }
+
 }
-
-// document.getElementsByClassName('calcular').addEventListener("click", calcular)

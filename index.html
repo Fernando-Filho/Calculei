@@ -14,6 +14,9 @@
 
       <label for="salárioContratual">Salário Contratual:</label><br>
       <input type="number" id="salarioContratual"><br>
+
+      <label for="dataAdmissao">Data de admissao:</label><br>
+      <input type="date" id="dataAdmissao"><br>
       
       <label for="númeroDependentes">Quantidade de Dependentes:</label><br>
       <input type="number" id="numeroDependentes"><br>
@@ -56,10 +59,10 @@
 
     </div>  
 
-      <input type="submit" onclick="calcular()" class="calcular" id="calculoFolhaDePagamento" value="Folha de Pagamento">
-      <input type="submit" class="calcular" id="calculoFerias" value="Férias">
-      <input type="submit" class="calcular" id="calculoDecimoTerceiro" value="13 Salário">
-      <input type="submit" class="calcular" id="calculoPatronal" value="Patronal">
+      <input type="submit" onclick="calcular('pagamento')" class="calcular" id="calculoFolhaDePagamento" value="Folha de Pagamento">
+      <input type="submit" onclick="calcular('ferias')" class="calcular" id="calculoFerias" value="Férias">
+      <input type="submit" onclick="calcular('13')" class="calcular" id="calculoDecimoTerceiro" value="13 Salário">
+      <input type="submit" onclick="calcular('patronal')" class="calcular" id="calculoPatronal" value="Patronal">
 
     
     <div id="resposta"></div>
@@ -81,6 +84,10 @@
   <script src="codigo/Contas individuais/patronal.js"></script>
   <script src="codigo/Contas individuais/rat-fap.js"></script>
   <script src="codigo/Contas individuais/outrasEntidades.js"></script>
+
+  <script src="codigo/Verificadores/Salario.js"></script>
+  <script src="codigo/Verificadores/Dependente.js"></script>
+  <script src="codigo/Verificadores/Admissao.js"></script>
 
 </body>
 </html>

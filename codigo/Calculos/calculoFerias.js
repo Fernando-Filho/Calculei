@@ -1,8 +1,15 @@
 function calcularFerias(baseCalculo, numeroDependentes)
 {   
-    baseCalculo = ( baseCalculo / 3 ) + baseCalculo
+    // Verificando está tudo certo com os dados.
+    const verificarSalario = verificadorDeSalario( baseCalculo )
+    const verificarDependentes = verificadorDeDependentes( numeroDependentes )
 
+    if ( !verificarSalario ){ return }
+
+    else if ( !verificarDependentes ) { return }
+    
     // Constantes que serão necessarias para o calculo da folha de pagamento.
+    baseCalculo = ( baseCalculo / 3 ) + baseCalculo
     let valorFGTS = fgts(baseCalculo)
     let valorINSS = inss(baseCalculo)
     let valorIRRF = irrf((baseCalculo - valorINSS), numeroDependentes)
@@ -14,7 +21,7 @@ function calcularFerias(baseCalculo, numeroDependentes)
     valorINSS = valorINSS.toFixed(2)
     valorIRRF = valorIRRF.toFixed(2)
 
-
+    console.log('cheguei')
     //Escrevendo no HTML.
     let resposta = document.getElementById('resposta')
     resposta.innerHTML = ""
@@ -23,5 +30,4 @@ function calcularFerias(baseCalculo, numeroDependentes)
                         Seu INSS seria de R$${valorINSS}<br>
                         Seu IRRF seria de R$${valorIRRF}<br>
                         Por fim, o valor líquido a receber seria de R$${salarioLíquido}`)
-
 }

@@ -1,6 +1,19 @@
-function calcularDecimoTerceiro(baseCalculo, numeroDependentes)
-{    
+function calcularDecimoTerceiro(baseCalculo, numeroDependentes, dataAdmissao)
+{ 
+    // Verificando está tudo certo com os dados.
+    const verificarSalario = verificadorDeSalario( baseCalculo )
+    const verificarDependentes = verificadorDeDependentes( numeroDependentes )
+    const verificarAdmissao = verificadorAdmissao( dataAdmissao )
+
+    if (!verificarSalario) { return }
+
+    if (!verificarDependentes) { return }
+
+    if (!verificarAdmissao) { return }
+
     // Constantes que serão necessarias para o calculo da folha de pagamento.
+    console.log(verificarAdmissao)
+
     let valorFGTS = fgts(baseCalculo)
     let valorINSS = inss(baseCalculo)
     let valorIRRF = irrf((baseCalculo - valorINSS), numeroDependentes)
