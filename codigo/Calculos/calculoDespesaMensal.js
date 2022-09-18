@@ -1,9 +1,13 @@
-function calcularpatronal(baseCalculo, aliquotaPatronal, aliquotaRat, aliquotaFap, aliquotaOutrasEntidades)
+function calcularpatronal(baseCalculo, numeroDependentes, aliquotaPatronal, aliquotaRat, aliquotaFap, aliquotaOutrasEntidades)
 {
+    console.log(aliquotaOutrasEntidades)
     // Verificando está tudo certo com os dados.
     const verificarSalario = verificadorDeSalario( baseCalculo )
     if (!verificarSalario) { return }
 
+    const verificarDependentes = verificadorDeDependentes( numeroDependentes )
+    if (!verificarDependentes) { return }
+    
     const verificarAliquotaPatronal = verificadorAliquotaPatronal( aliquotaPatronal )
     if (!verificarAliquotaPatronal) { return }
 
@@ -17,7 +21,9 @@ function calcularpatronal(baseCalculo, aliquotaPatronal, aliquotaRat, aliquotaFa
     if (!verificarAliquotaOutrasEntidades) { return }
     
     // Constantes que serão necessarias para o calculo da folha de pagamento.
+    let valorSalarioFamilia = salarioFamilia(baseCalculo, numeroDependentes)
     let valorINSS = inss(baseCalculo)
+    let valorFGTS = fgts(baseCalculo)
     let valorPatronal = patronal(baseCalculo, aliquotaPatronal)
     let valorGilRat = ratfap(baseCalculo, aliquotaRat, aliquotaFap)
     let valorOutrasEntidades = outrasEntidades(baseCalculo, aliquotaOutrasEntidades)

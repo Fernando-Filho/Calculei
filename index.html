@@ -56,7 +56,6 @@
       <label for="aliquotaOutrasEntidades">Outras Entidades (%)</label><br>
       <input type="number" id="aliquotaOutrasEntidades"><br>
       
-
     </div>  
 
       <input type="submit" onclick="calcular('pagamento')" class="calcular" id="calculoFolhaDePagamento" value="Folha de Pagamento">
@@ -64,7 +63,6 @@
       <input type="submit" onclick="calcular('13')" class="calcular" id="calculoDecimoTerceiro" value="13 Salário">
       <input type="submit" onclick="calcular('patronal')" class="calcular" id="calculoPatronal" value="Patronal">
 
-    
     <div id="resposta"></div>
   </main>
   
@@ -73,11 +71,13 @@
   </footer>
 
   <script src="codigo/calcular.js"></script>
+  <script src="codigo/funções/getElementById.js"></script>
   <script src="codigo/Calculos/calculoFolhaDePagamento.js"></script>
   <script src="codigo/Calculos/calculoFerias.js"></script>
-  <script src="codigo/Calculos/calculoPatronal.js"></script>
+  <script src="codigo/Calculos/calculoDespesaMensal.js"></script>
   <script src="codigo/Calculos/calculoDecimoTerceiro.js"></script>
 
+  <script src="codigo/Contas individuais/salarioFamilia.js"></script>
   <script src="codigo/Contas individuais/fgts.js"></script>
   <script src="codigo/Contas individuais/inss.js"></script>
   <script src="codigo/Contas individuais/irrf.js"></script>
@@ -89,8 +89,8 @@
   <script src="codigo/Verificadores/Dependente.js"></script>
   <script src="codigo/Verificadores/Admissao.js"></script>
   <script src="codigo/Verificadores/AliquotaPatronal.js"></script>
-  <script src="codigo/Verificadores/AliquotaRAT.js"></script>
-  <script src="codigo/Verificadores/AliquotaFAP.js"></script>
+  <script src="codigo/Verificadores/Gilrat/AliquotaRAT.js"></script>
+  <script src="codigo/Verificadores/Gilrat/AliquotaFAP.js"></script>
   <script src="codigo/Verificadores/AliquotaOutrasEntidades.js"></script>
 
 </body>

@@ -1,20 +1,21 @@
 function calcular(event)
 {   
     // variaveis que serão pegas do cliente.
-    const salarioContratual = Number(document.getElementById('salarioContratual').value)
-    const numeroDependentes = Number(document.getElementById('numeroDependentes').value)
-    const dataAdmissao = document.getElementById('dataAdmissao')
 
-    const outrosProventos = Number(document.getElementById('outrosProventos').value)
+    const salarioContratual = getByID('salarioContratual')
+    const numeroDependentes = getByID('numeroDependentes')
+    const dataAdmissao = document.getElementById('dataAdmissao')
+    console.log(dataAdmissao)
+    const outrosProventos = getByID('outrosProventos')
     const proventoBaseCalculo = document.getElementById('proventoBaseCalculo').checked
 
-    const outrosDescontos = Number(document.getElementById('outrosDescontos').value)
+    const outrosDescontos = getByID('outrosDescontos')
     const descontosBaseCalculo = document.getElementById('descontosBaseCalculo').checked
 
-    const aliquotaPatronal = Number(document.getElementById('aliquotaPatronal').value)
-    const aliquotaRat = Number(document.getElementById('aliquotaRat').value)
-    const aliquotaFap = Number(document.getElementById('aliquotaFap').value)
-    const aliquotaOutrasEntidades = Number(document.getElementById('aliquotaOutrasEntidades').value)
+    const aliquotaPatronal = getByID('aliquotaPatronal')
+    const aliquotaRat = getByID('aliquotaRat')
+    const aliquotaFap = getByID('aliquotaFap')
+    const aliquotaOutrasEntidades = getByID('aliquotaOutrasEntidades')
 
     let baseCalculo = salarioContratual
 
@@ -23,7 +24,6 @@ function calcular(event)
     else if (proventoBaseCalculo == true && descontosBaseCalculo == false) { baseCalculo = baseCalculo + outrosProventos }
 
     else if (proventoBaseCalculo == false && descontosBaseCalculo == true) { baseCalculo = baseCalculo - outrosDescontos }
-
 
     switch (event) {
         case 'pagamento':
@@ -36,9 +36,7 @@ function calcular(event)
             document.getElementById('calculoDecimoTerceiro').addEventListener("click", calcularDecimoTerceiro(baseCalculo, numeroDependentes, dataAdmissao))
             break;
         case 'patronal':
-            document.getElementById('calculoPatronal').addEventListener("click", calcularpatronal(baseCalculo, aliquotaPatronal, aliquotaRat, aliquotaFap, aliquotaOutrasEntidades))
-
+            document.getElementById('calculoPatronal').addEventListener("click", calcularpatronal(baseCalculo, numeroDependentes, aliquotaPatronal, aliquotaRat, aliquotaFap, aliquotaOutrasEntidades))
             break;
     }
-
 }

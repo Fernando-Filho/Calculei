@@ -12,7 +12,7 @@ function calcularDecimoTerceiro(baseCalculo, numeroDependentes, dataAdmissao)
 
     // Constantes que serão necessarias para o calculo da folha de pagamento.
     console.log(verificarAdmissao)
-
+    let valorSalarioFamilia = salarioFamilia(baseCalculo, numeroDependentes)
     let valorFGTS = fgts(baseCalculo)
     let valorINSS = inss(baseCalculo)
     let valorIRRF = irrf((baseCalculo - valorINSS), numeroDependentes)
