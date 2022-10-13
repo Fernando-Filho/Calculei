@@ -4,8 +4,10 @@ function calcular(event)
 
     const salarioContratual = getByID('salarioContratual')
     const numeroDependentes = getByID('numeroDependentes')
-    const dataAdmissao = document.getElementById('dataAdmissao')
+    const dataAdmissao = document.getElementById('dataAdmissao').value
+    let datateste = new Date('2022-12-32')
     console.log(dataAdmissao)
+    console.log(datateste)
     const outrosProventos = getByID('outrosProventos')
     const proventoBaseCalculo = document.getElementById('proventoBaseCalculo').checked
 

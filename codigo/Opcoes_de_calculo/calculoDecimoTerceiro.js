@@ -11,7 +11,8 @@ function calcularDecimoTerceiro(baseCalculo, numeroDependentes, dataAdmissao)
     if (!verificarAdmissao) { return }
 
     // Constantes que serão necessarias para o calculo da folha de pagamento.
-    console.log(verificarAdmissao)
+    let quantidadesDeAvos = quantAvos(dataAdmissao)
+    baseCalculo = ((baseCalculo / 12) * quantidadesDeAvos)
     let valorSalarioFamilia = salarioFamilia(baseCalculo, numeroDependentes)
     let valorFGTS = fgts(baseCalculo)
     let valorINSS = inss(baseCalculo)
@@ -24,6 +25,7 @@ function calcularDecimoTerceiro(baseCalculo, numeroDependentes, dataAdmissao)
     valorFGTS = valorFGTS.toFixed(2)
     valorINSS = valorINSS.toFixed(2)
     valorIRRF = valorIRRF.toFixed(2)
+    valorSalarioFamilia = valorSalarioFamilia.toFixed(2)
 
     //Escrevendo no HTML.
     let resposta = document.getElementById('resposta')
