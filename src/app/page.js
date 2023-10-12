@@ -4,6 +4,7 @@ import { Page } from './stylePage'
 
 import Header from "../components/Header/Index"
 import Main from "../components/Main/Index"
+import Footer from "../components/Footer/Index"
 
 import { useState } from 'react'
 
@@ -58,7 +59,7 @@ export default function Home() {
             irrf={irrf}
             openRespsota={openRespsota}>
       </Main>
-
+      <Footer/>
 
     </Page>
   )
