@@ -20,6 +20,7 @@ export default function StyledComponentsRegistry({ children }) {
   return (
     <StyleSheetManager sheet={styledComponentsStyleSheet.instance}>
         {children}
+        <title>Minha Folha</title>
     </StyleSheetManager>
   )
 }

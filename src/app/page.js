@@ -1,5 +1,7 @@
 "use client"
 
+import Head from 'next/head';
+
 import { Page } from './stylePage'
 
 import Header from "../components/Header/Index"
@@ -43,6 +45,7 @@ export default function Home() {
   }
 
   return (
+    <Head/>,
     <Page>
       <Header 
               salario={salario}
