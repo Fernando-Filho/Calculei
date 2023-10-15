@@ -49,6 +49,9 @@ export const Button = styled.button`
     &:hover{
         box-shadow: 0px 0px 15px 1px rgba(14, 116, 232, .8);
     }
+    &:focus{
+        box-shadow: 0px 0px 15px 1px rgba(14, 116, 232, .8);
+    }
 
     @media screen and (max-width: 678px){
         width: 150px;
