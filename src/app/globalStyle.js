@@ -29,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
             color: rgba(179, 179, 179, 0.4);
         }
     }
-    input, textarea:focus{
+    input, textarea, button:focus{
         outline: none;
     }
     button{
