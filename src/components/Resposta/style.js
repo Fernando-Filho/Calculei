@@ -5,7 +5,6 @@ export const RespostaContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 500px;
     width: 550px;
     border-radius: 12px;
     background-color: rgb(179, 179, 179);
