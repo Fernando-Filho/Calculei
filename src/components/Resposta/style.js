@@ -19,7 +19,7 @@ export const RespostaContainer = styled.div`
 export const LinhasResposta = styled.div`
     display: flex;
     flex-direction: row;
-    height: 20%;
+    height: 60px;
     width: 100%;
     border: solid 1px #333438;
     
