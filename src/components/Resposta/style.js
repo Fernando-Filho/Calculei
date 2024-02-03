@@ -5,7 +5,6 @@ export const RespostaContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 500px;
     width: 550px;
     border-radius: 12px;
     background-color: rgb(179, 179, 179);
@@ -19,7 +18,7 @@ export const RespostaContainer = styled.div`
 export const LinhasResposta = styled.div`
     display: flex;
     flex-direction: row;
-    height: 20%;
+    height: 60px;
     width: 100%;
     border: solid 1px #333438;
     

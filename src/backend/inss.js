@@ -1,9 +1,9 @@
 const INSS = (baseCalculo) =>{
     const inss ={
-        faixa_1:        [0, 1320, 7.5, 99.00],
-        faixa_2: [1320.01, 2571.29, 9, 211.62],
-        faixa_3: [2571.3, 3856.94, 12, 365.89],
-        faixa_4: [3856.95, 7507.49, 14, 876.97]
+        faixa_1:        [0, 1412, 7.5, 105.9],
+        faixa_2: [1412.01, 2666.68, 9, 218.82],
+        faixa_3: [2666.69, 4000.03, 12, 378.82],
+        faixa_4: [4000.04, 7786.02, 14, 908.86]
     }
     // Constantes que serão necessárias para o calculo do INSS.
     let inssDescontado = [];

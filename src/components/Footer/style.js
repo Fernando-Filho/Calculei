@@ -8,8 +8,8 @@ export const FooterContainer = styled.footer`
     justify-content: center;
     font-size: 16px;
     font-weight: bold;
-    position: fixed;
-    bottom: 0;
+    /* position: fixed; */
+    /* bottom: 0; */
     width: 100%;
     padding: 20px;
     color: #5E60CE
