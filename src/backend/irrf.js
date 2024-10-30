@@ -2,10 +2,10 @@ import INSS from './inss'
 
 const IRRF = (baseCalculo, qtdDependentes) =>{
     const irrf = {
-        faixa_1: [2112.01, 7.5, 158.40],
-        faixa_2: [2826.66, 15, 370.40],
-        faixa_3: [3751.06, 22.5, 651.73],
-        faixa_4: [4664.68, 27.5, 884.96],
+        faixa_1: [2259,20, 7.5, 169.44],
+        faixa_2: [2826.65, 15, 381.44],
+        faixa_3: [3751.05, 22.5, 662.77],
+        faixa_4: [4664.68, 27.5, 896.00],
         deducaoPorDependentes: 189.59,
         descontoSimplificado: 528.00
     }
